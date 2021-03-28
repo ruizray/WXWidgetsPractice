@@ -22,14 +22,7 @@ private:
 	vector<wxButton*> m_numButtons;
     stack<string> s;
     vector<string> strings;
-	wxButton* m_addButton;
-    wxButton* m_deciButton;
-    wxButton* m_signButton;
-    wxButton* m_subButton;
-    wxButton* m_mulButton;
-    wxButton* m_divButton;
-    wxButton* m_clsButton;
-    wxButton* m_equalsButton;
+	
 
     // internal variables
     std::string m_preDecimal;
