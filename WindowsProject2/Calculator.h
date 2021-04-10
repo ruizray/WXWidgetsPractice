@@ -7,37 +7,29 @@
 
 using namespace std;
 
-class Calculator : public wxFrame
-{
-public:
-    Calculator();
-    ~Calculator();
+class Calculator : public wxFrame {
+ public:
+  Calculator();
+  ~Calculator();
 
-  
-    
+ private:
+  wxTextCtrl* m_display;
+  wxListBox* m_debug;
+  vector<wxButton*> m_numButtons;
+  stack<string> s;
+  vector<string> strings;
 
-private:
-	wxTextCtrl* m_display;
-    wxListBox* m_debug;
-	vector<wxButton*> m_numButtons;
-    stack<string> s;
-    vector<string> strings;
-	
+  // internal variables
+  std::string m_preDecimal;
+  std::string m_postDecimal;
+  int leftParen;
+  int rightParen;
+  double result;
 
-    // internal variables
-    std::string m_preDecimal;
-    std::string m_postDecimal;
-    int leftParen;
-    int rightParen;
-    double result;
-    
-    void addToDisplay(wxCommandEvent& evt);
-    void getResult();
-    void removeSpaces(string &str);
-    int prec(string c);
-    vector<string> infixToPostfix(vector<string> &s);
-    double evaluatePostfix(vector<string> &exp);
-  
-
+  void addToDisplay(wxCommandEvent& evt);
+  void getResult();
+  void removeSpaces(string& str);
+  int prec(string c);
+  vector<string> infixToPostfix(vector<string>& s);
+  double evaluatePostfix(vector<string>& exp);
 };
-
