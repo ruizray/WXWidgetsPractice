@@ -1,10 +1,10 @@
 #include "wx/wx.h"
 #include "barchartanimate.h"
-#include "graphWin.h"
+
 
 wxBEGIN_EVENT_TABLE( BarChartAnimate , wxFrame )
 EVT_MENU( wxID_OPEN , BarChartAnimate::readFile )
-EVT_CLOSE(BarChartAnimate::OnClose)
+EVT_CLOSE( BarChartAnimate::OnClose )
 
 wxEND_EVENT_TABLE()
 using namespace std;
@@ -137,29 +137,37 @@ void BarChartAnimate::previousFrame( wxCommandEvent& evt ) {
 }
 
 void BarChartAnimate::autoPlay( wxCommandEvent& evt ) {
-	m_timer = new wxTimer( this , wxID_EXECUTE );
-	m_timer->Start( 500 );
-	this->Bind( wxEVT_TIMER , [&]( wxTimerEvent& )
-		{
-			wxVector<wxString> label;
-			wxVector<wxDouble> nums;
-			j++;
-			this->SetLabel( title + " Current frame: " + barcharts[j].getFrame() );
-			barcharts[j].sortChart();
+	if(m_timer->IsRunning() == false) {
+		m_timer = new wxTimer( this , wxID_EXECUTE );
+		m_timer->Start( 500 );
+		this->Bind( wxEVT_TIMER , [&]( wxTimerEvent& )
+			{
+				wxVector<wxString> label;
+				wxVector<wxDouble> nums;
+				j++;
+				this->SetLabel( title + " Current frame: " + barcharts[j].getFrame() );
+				barcharts[j].sortChart();
 
-			for(int i = 0; i < barcharts[0].getSize(); i++) {
-				label.push_back( barcharts[j][i].getName() );
-				nums.push_back( barcharts[j][i].getValue() );
-			}
-			ShowFirst( label , nums );
-		} , wxID_EXECUTE );
+				for(int i = 0; i < barcharts[0].getSize(); i++) {
+					label.push_back( barcharts[j][i].getName() );
+					nums.push_back( barcharts[j][i].getValue() );
+				}
+				ShowFirst( label , nums );
+			} , wxID_EXECUTE );
+	}
+	else {
+
+		m_timer->Stop();
+		
+	}
+
 }
 
 void BarChartAnimate::OnClose( wxCloseEvent& event ) {
-	if(m_timer->IsRunning()== true) {
-m_timer->Stop();
+	if(m_timer->IsRunning() == true) {
+		m_timer->Stop();
 	}
-	
+
 	event.Skip();
 }
 

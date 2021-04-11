@@ -33,13 +33,7 @@
     <ClInclude Include="barchartanimate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\Documents\wx314\samples\barchart\src\wxbarchartapp.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\Documents\wx314\samples\barchart\src\wxbarchartframe.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="graphWin.h">
+    <ClInclude Include="Header.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -53,16 +47,7 @@
     <ClCompile Include="Calculator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="bar.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="barchart.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="barchartanimate.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="graphWin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

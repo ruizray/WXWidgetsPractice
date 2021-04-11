@@ -19,24 +19,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\Documents\wx314\samples\barchart\src\wxbarchartapp.h" />
-    <ClInclude Include="..\..\..\..\Documents\wx314\samples\barchart\src\wxbarchartframe.h" />
     <ClInclude Include="bar.h" />
     <ClInclude Include="barchart.h" />
     <ClInclude Include="barchartanimate.h" />
     <ClInclude Include="Calculator.h" />
     <ClInclude Include="cApp.h" />
     <ClInclude Include="cMain.h" />
-    <ClInclude Include="graphWin.h" />
+    <ClInclude Include="Header.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="bar.cpp" />
-    <ClCompile Include="barchart.cpp" />
     <ClCompile Include="barchartanimate.cpp" />
     <ClCompile Include="Calculator.cpp" />
     <ClCompile Include="cApp.cpp" />
     <ClCompile Include="cMain.cpp" />
-    <ClCompile Include="graphWin.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\..\..\Downloads\cities.txt">

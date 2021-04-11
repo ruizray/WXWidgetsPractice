@@ -28,7 +28,7 @@ class cMain : public wxFrame {
   BarChartAnimate* m_frame3 = nullptr;
  
   //Functions
-  void btnAddToList(wxCommandEvent& evt);
+
   void btnRemoveFromList(wxCommandEvent& evt);
   void openCalculator(wxCommandEvent& evt);
   void openChartAnimate(wxCommandEvent& evt);

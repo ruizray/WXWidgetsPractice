@@ -11,8 +11,8 @@
 #include <string>
 #include <typeinfo>
 #include <vector>
+#include <set>
 #include <wx/charts/wxcharts.h>
-#include "graphWin.h"
 #include "barchart.h"
 
 
@@ -32,7 +32,7 @@ private:
 	string xlabel;
 	string sources;
 	int j;
-
+	map<int , set<Bar>> frames;
 
 
 public:
@@ -56,9 +56,6 @@ public:
 
 	// Timer
 	wxTimer* m_timer = nullptr;
-
-	// Frames
-	graphWin* m_frame = nullptr;
 
 	// Buttons
 	wxButton* btn_openFile = nullptr;
